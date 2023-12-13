@@ -12,7 +12,6 @@
                 @foreach ($trains as $train)
                     <div class="col-3">
                         <div class="train-card">
-
                             <ul>
                                 <li>
                                     <h2>Azienda Ferroviaria: <br> <span>{{ $train->azienda }}</span></h2>
