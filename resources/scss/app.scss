@@ -1,1 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
+
+html {
+    padding: 100px 0px;
+    background-color: lightgray;
+}
+
+.row {
+    background-color: lightgray;
+}
+
+ul,ol,li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+section {
+    text-align: center;
+    background-color: lightgray;
+}
+
+span {
+    color: red;
+}
+
+.train-card {
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 30px;
+}
