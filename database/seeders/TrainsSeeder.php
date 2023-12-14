@@ -19,16 +19,17 @@ class HouseSeeder extends Seeder
         for ($i = 0; $i < 50 ; $i++) {
             $new_train = new Train();
 
-            $new_train->reference = $faker->
-            $new_train->address = $faker->
-            $new_train->city = $faker->
-            $new_train->postal_code = $faker->
-            $new_train->state = $faker->
-            $new_train->square_meters = $faker->
-            $new_train->rooms = $faker->
-            $new_train->bathrooms = $faker->
-            $new_train->price = $faker->
-            $new_train->energy_rating = $faker->
+            $new_train->azienda = $faker->
+            $new_train->codice_treno = $faker->
+            $new_train->stazione_di_partenza = $faker->city();
+            $new_train->stazione_di_arrivo = $faker->city();
+            $new_train->orario_di_partenza = $faker->
+            $new_train->orario_di_arrivo = $faker->
+            $new_train->numero_carrozze = $faker->
+            $new_train->in_orario = $faker->
+            $new_train->cancellato = $faker->
+            $new_train->in_partenza_oggi = $faker->
+
             // SALVO I CHANGES
             $new_train->save();
         }
