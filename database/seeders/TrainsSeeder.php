@@ -19,16 +19,16 @@ class HouseSeeder extends Seeder
         for ($i = 0; $i < 50 ; $i++) {
             $new_train = new Train();
 
-            $new_train->azienda = $faker->
-            $new_train->codice_treno = $faker->
+            $new_train->azienda = $faker->randomElement(['Italo', 'Trenitalia', 'JapRail', 'Rekkles Treni', 'Lorenzo Wagons']);
+            $new_train->codice_treno = $faker->unique()->numberBetween(1000, 99999999999);
             $new_train->stazione_di_partenza = $faker->city();
             $new_train->stazione_di_arrivo = $faker->city();
-            $new_train->orario_di_partenza = $faker->
-            $new_train->orario_di_arrivo = $faker->
-            $new_train->numero_carrozze = $faker->
-            $new_train->in_orario = $faker->
-            $new_train->cancellato = $faker->
-            $new_train->in_partenza_oggi = $faker->
+            $new_train->orario_di_partenza = $faker->time();
+            $new_train->orario_di_arrivo = $faker->time();
+            $new_train->numero_carrozze = $faker->numberBetween(4, 22);
+            $new_train->in_orario = $faker->boolean();
+            $new_train->cancellato = $faker->boolean();
+            $new_train->in_partenza_oggi = $faker->boolean();
 
             // SALVO I CHANGES
             $new_train->save();
