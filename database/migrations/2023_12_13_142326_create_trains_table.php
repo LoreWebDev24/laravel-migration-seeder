@@ -20,8 +20,9 @@ return new class extends Migration
             $table->dateTime('data_orario_di_partenza');
             $table->dateTime('data_orario_di_arrivo');
             $table->tinyInteger('numero_carrozze');
-            $table->boolean('in_orario');
-            $table->boolean('cancellato');
+            $table->boolean('in_orario')->default(true);
+            $table->boolean('cancellato')->default(false);
+            // da fixare
             $table->boolean('in_partenza_oggi')->default(true);
             $table->timestamps();
         });

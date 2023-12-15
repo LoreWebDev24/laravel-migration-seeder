@@ -20,12 +20,12 @@ class TrainsSeeder extends Seeder
 
             $new_train = new Train();
 
-            $cities = $this->getCities();
+            $cities = $faker->randomElements($this->getCities(), 2);
             $start = $faker->dateTimeThisMonth();
             $end =  $faker->dateTimeInInterval($start,'+5 hours');
 
             $new_train->azienda = $faker->randomElement(['Italo', 'Trenitalia', 'JapRail', 'Rekkles Treni', 'Lorenzo Wagons']);
-            $new_train->codice_treno = $faker->unique()->numberBetween(1000, 99999999999);
+            $new_train->codice_treno = 'RW' . $faker->unique()->numberBetween(1000, 99999999999);
             $new_train->stazione_di_partenza = $cities[0];
             $new_train->stazione_di_arrivo = $cities[1];
             $new_train->data_orario_di_partenza = $start;
@@ -42,10 +42,12 @@ class TrainsSeeder extends Seeder
 
     public function getCities () {
 
-        // $allCities = ['Milano', 'Norimberga'.'Pescara' . 'Roma' . 'Bologna' . 'Catanzaro' . 'Napoli' . 'Cuneo' . 'Bergamo' . 'Brescia'];
+        $allCities = ['Milano', 'Norimberga'.'Pescara' . 'Roma' . 'Bologna' . 'Catanzaro' . 'Napoli' . 'Cuneo' . 'Bergamo' . 'Brescia'];
 
         // $cities = array_rand($allCities,2);
 
-        return ['Milano','Pescara'];
+        // $faker->randomElements(['a', 'b', 'c', 'd', 'e'], 3);
+
+        return $allCities;
     }
 }
